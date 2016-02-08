@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E7510323-0EA7-4EDC-A7EE-A60CC609C891}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{104DF9EA-E852-4061-8107-C37A333CD98C}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SimplePersistence.UoW", "src\SimplePersistence.UoW\SimplePersistence.UoW.xproj", "{0F63F579-2436-4919-B1C1-6BEF30318D7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F63F579-2436-4919-B1C1-6BEF30318D7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F63F579-2436-4919-B1C1-6BEF30318D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F63F579-2436-4919-B1C1-6BEF30318D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F63F579-2436-4919-B1C1-6BEF30318D7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0F63F579-2436-4919-B1C1-6BEF30318D7F} = {E7510323-0EA7-4EDC-A7EE-A60CC609C891}
+	EndGlobalSection
+EndGlobal
