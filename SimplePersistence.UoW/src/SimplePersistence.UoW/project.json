@@ -28,7 +28,9 @@
       "frameworkAssemblies": {
         "Microsoft.CSharp": "",
         "System": "",
-        "System.Runtime": ""
+        "System.Runtime": "",
+        "System.Threading": "",
+        "System.Threading.Tasks": ""
       }
     },
     "dotnet": {
