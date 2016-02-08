@@ -26,8 +26,8 @@ namespace SimplePersistence.UoW
 #if !(NET20 || NET35)
     using System.Threading;
     using System.Threading.Tasks;
-
 #endif
+    using Exceptions;
 
     /// <summary>
     /// Interface representing an unit of work.
@@ -42,11 +42,20 @@ namespace SimplePersistence.UoW
         /// <summary>
         /// Commit the work made by this <see cref="IUnitOfWork"/>.
         /// </summary>
+        /// <exception cref="CommitException"/>
+        /// <exception cref="ConcurrencyException">
+        /// Thrown when the work can't be committed due to concurrency conflicts
+        /// </exception>
         void Commit();
 
         /// <summary>
         /// Rollback every work made by this <see cref="IUnitOfWork"/>.
         /// </summary>
+        /// <exception cref="RollbackException">
+        /// Thrown when the work failed to rollback. If the rollback was invoked
+        /// due to a failed commit, the property <see cref="RollbackException.CommitException"/>
+        /// should contain the related exception
+        /// </exception>
         void Rollback();
 
 #if !(NET20 || NET35)
@@ -63,6 +72,10 @@ namespace SimplePersistence.UoW
         /// </summary>
         /// <param name="ct">The cancellation token</param>
         /// <returns>The task to be awaited</returns>
+        /// <exception cref="CommitException"/>
+        /// <exception cref="ConcurrencyException">
+        /// Thrown when the work can't be committed due to concurrency conflicts
+        /// </exception>
         Task CommitAsync(CancellationToken ct = default(CancellationToken));
 
         /// <summary>
@@ -70,6 +83,11 @@ namespace SimplePersistence.UoW
         /// </summary>
         /// <param name="ct">The cancellation token</param>
         /// <returns>The task to be awaited</returns>
+        /// <exception cref="RollbackException">
+        /// Thrown when the work failed to rollback. If the rollback was invoked
+        /// due to a failed commit, the property <see cref="RollbackException.CommitException"/>
+        /// should contain the related exception
+        /// </exception>
         Task RollbackAsync(CancellationToken ct = default(CancellationToken));
 
 #endif
