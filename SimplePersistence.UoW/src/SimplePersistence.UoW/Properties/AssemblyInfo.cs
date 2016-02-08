@@ -1,23 +1,40 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿using System;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
-// General Information about an assembly is controlled through the following
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
+#if PORTABLE40
+[assembly: AssemblyTitle("SimplePersistence.UoW Portable .NET 4.0")]
+#elif PORTABLE
+[assembly: AssemblyTitle("SimplePersistence.UoW Portable")]
+#elif DOTNET
+[assembly: AssemblyTitle("SimplePersistence.UoW .NET Platform")]
+#elif NET20
+[assembly: AssemblyTitle("SimplePersistence.UoW .NET 2.0")]
+#elif NET35
+[assembly: AssemblyTitle("SimplePersistence.UoW .NET 3.5")]
+#elif NET40
+[assembly: AssemblyTitle("SimplePersistence.UoW .NET 4.0")]
+#else
 [assembly: AssemblyTitle("SimplePersistence.UoW")]
-[assembly: AssemblyDescription("")]
+#endif
+
+[assembly: AssemblyDescription("SimplePersistence.UoW is a framework to help implement the Unit of Work pattern, by exposing interfaces for repositories that can be aggregated in work areas.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SimplePersistence.UoW")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCompany("Net.JoaoSimoes")]
+[assembly: AssemblyProduct("SimplePersistence")]
+[assembly: AssemblyCopyright("Copyright © 2016 SimplePersistence")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-// Setting ComVisible to false makes the types in this assembly not visible
-// to COM components.  If you need to access a type in this assembly from
-// COM, set the ComVisible attribute to true on that type.
+#if !(PORTABLE40 || PORTABLE)
+
 [assembly: ComVisible(false)]
 
-// The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0f63f579-2436-4919-b1c1-6bef30318d7f")]
+[assembly: Guid("26bf2ceb-dec6-43c8-a94d-6d993ea9ffe6")]
+
+#endif
+
+[assembly: CLSCompliant(true)]
+
+[assembly: AssemblyVersion("3.0.0")]
+[assembly: AssemblyInformationalVersion("3.0.0-alpha1")]
