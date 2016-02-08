@@ -30,7 +30,7 @@ using System.Runtime.InteropServices;
 
 [assembly: ComVisible(false)]
 
-[assembly: Guid("26bf2ceb-dec6-43c8-a94d-6d993ea9ffe6")]
+[assembly: Guid("6c633c6b-b379-48c7-92bd-1e006a0ab01e")]
 
 #endif
 
