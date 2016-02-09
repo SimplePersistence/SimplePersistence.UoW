@@ -52,7 +52,7 @@
             {
                 OnCommit();
             }
-            catch (CommitException)
+            catch (UnitOfWorkException)
             {
                 throw;
             }
@@ -120,7 +120,7 @@
 
                     t.Exception.Flatten().Handle(ex =>
                     {
-                        if (ex is CommitException)
+                        if (ex is UnitOfWorkException)
                             throw ex;
                         throw new CommitException(ex);
                     });
@@ -146,7 +146,7 @@
             {
                 await OnCommitAsync(ct);
             }
-            catch (CommitException)
+            catch (UnitOfWorkException)
             {
                 throw;
             }
@@ -182,17 +182,25 @@
 #if !(NET20 || NET35)
 
         /// <summary>
-        /// 
+        /// Invoked once for any given scope, it should prepare the
+        /// current instance for any subsequent work
         /// </summary>
-        /// <param name="ct"></param>
-        /// <returns></returns>
+        /// <param name="ct">The cancellation token</param>
+        /// <returns>The task for this operation</returns>
         protected abstract Task OnBeginAsync(CancellationToken ct);
 
         /// <summary>
-        /// 
+        /// Invoked once for any given scope, it should commit any work
+		/// made by this instance
         /// </summary>
-        /// <param name="ct"></param>
-        /// <returns></returns>
+        /// <param name="ct">The cancellation token</param>
+        /// <returns>The task for this operation</returns>
+        /// <exception cref="CommitException">
+        /// Thrown when the work failed to commit
+        /// </exception>
+        /// <exception cref="ConcurrencyException">
+        /// Thrown when the work can't be committed due to concurrency conflicts
+        /// </exception>
         protected abstract Task OnCommitAsync(CancellationToken ct);
 
 #endif
