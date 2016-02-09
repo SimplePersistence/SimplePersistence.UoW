@@ -34,9 +34,15 @@ namespace SimplePersistence.UoW.Exceptions
             "The scope of the current unit of work is undefined. The begin method should be invoked before any commit.";
 
         /// <summary>
+        /// The <seealso cref="ScopeEnabledUnitOfWork"/> scope value
+        /// </summary>
+        public int Scope { get; }
+
+        /// <summary>
         /// Creates a new instance with the default message
         /// </summary>
-        public UndefinedScopeException() : this(DefaultMessage)
+        /// <param name="scope">The current scope</param>
+        public UndefinedScopeException(int scope) : this(scope, DefaultMessage)
         {
 
         }
@@ -44,29 +50,32 @@ namespace SimplePersistence.UoW.Exceptions
         /// <summary>
         /// Creates a new instance with the default message and the related exception
         /// </summary>
+        /// <param name="scope">The current scope</param>
         /// <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
-        public UndefinedScopeException(Exception innerException) : base(DefaultMessage, innerException)
+        public UndefinedScopeException(int scope, Exception innerException) : base(DefaultMessage, innerException)
         {
-
+            Scope = scope;
         }
 
         /// <summary>
         /// Creates a new instance with the given error message
         /// </summary>
+        /// <param name="scope">The current scope</param>
         /// <param name="message">The error message that explains the reason for the exception.</param>
-        public UndefinedScopeException(string message) : base(message)
+        public UndefinedScopeException(int scope, string message) : base(message)
         {
-
+            Scope = scope;
         }
 
         /// <summary>
         /// Creates a new instance with the given error message and the related exception
         /// </summary>
+        /// <param name="scope">The current scope</param>
         /// <param name="message">The error message that explains the reason for the exception.</param>
         /// <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
-        public UndefinedScopeException(string message, Exception innerException) : base(message, innerException)
+        public UndefinedScopeException(int scope, string message, Exception innerException) : base(message, innerException)
         {
-
+            Scope = scope;
         }
     }
 }
