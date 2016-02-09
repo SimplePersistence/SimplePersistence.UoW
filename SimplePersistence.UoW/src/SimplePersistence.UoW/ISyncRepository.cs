@@ -8,8 +8,13 @@
     /// </summary>
     /// <typeparam name="TEntity">The entity type</typeparam>
     /// <typeparam name="TId">The entity id type</typeparam>
+#if !(NET20 || NET35)
     public interface ISyncRepository<TEntity, in TId>
-        where TEntity : class 
+        where TEntity : class
+#else
+    public interface IRepository<TEntity, in TId>
+        where TEntity : class
+#endif
     {
         #region GetById
 
@@ -126,8 +131,13 @@
     /// <typeparam name="TEntity">The entity type</typeparam>
     /// <typeparam name="TId01">The entity id first type</typeparam>
     /// <typeparam name="TId02">The entity id second type</typeparam>
+#if !(NET20 || NET35)
     public interface ISyncRepository<TEntity, in TId01, in TId02>
         where TEntity : class
+#else
+    public interface IRepository<TEntity, in TId01, in TId02>
+        where TEntity : class
+#endif
     {
         #region GetById
 
@@ -247,8 +257,13 @@
     /// <typeparam name="TId01">The entity id first type</typeparam>
     /// <typeparam name="TId02">The entity id second type</typeparam>
     /// <typeparam name="TId03">The entity id third type</typeparam>
+#if !(NET20 || NET35)
     public interface ISyncRepository<TEntity, in TId01, in TId02, in TId03>
         where TEntity : class
+#else
+    public interface IRepository<TEntity, in TId01, in TId02, in TId03>
+        where TEntity : class
+#endif
     {
         #region GetById
 
@@ -371,8 +386,13 @@
     /// <typeparam name="TId02">The entity id second type</typeparam>
     /// <typeparam name="TId03">The entity id third type</typeparam>
     /// <typeparam name="TId04">The entity id fourth type</typeparam>
+#if !(NET20 || NET35)
     public interface ISyncRepository<TEntity, in TId01, in TId02, in TId03, in TId04>
         where TEntity : class
+#else
+    public interface IRepository<TEntity, in TId01, in TId02, in TId03, in TId04>
+        where TEntity : class
+#endif
     {
         #region GetById
 
@@ -493,8 +513,13 @@
     /// to manipulate persisted entities
     /// </summary>
     /// <typeparam name="TEntity">The entity type</typeparam>
+#if !(NET20 || NET35)
     public interface ISyncRepository<TEntity>
         where TEntity : class
+#else
+    public interface IRepository<TEntity>
+        where TEntity : class
+#endif
     {
         #region GetById
 
