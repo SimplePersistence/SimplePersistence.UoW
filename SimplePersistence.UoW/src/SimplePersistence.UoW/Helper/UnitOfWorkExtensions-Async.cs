@@ -122,16 +122,7 @@
             this TUoW uow, Func<Task<T>> toExecute, CtToken ct = default(CtToken))
             where TUoW : IUnitOfWork
         {
-            if (uow == null) throw new ArgumentNullException(nameof(uow));
-            if (toExecute == null) throw new ArgumentNullException(nameof(toExecute));
-
-            await uow.BeginAsync(ct);
-
-            var result = await toExecute();
-
-            await uow.CommitAsync(ct);
-
-            return result;
+            return await uow.ExecuteAndCommitAsync(async (u, c) => await toExecute(), ct);
         }
 #endif
 
@@ -246,14 +237,10 @@
             this TUoW uow, Func<Task> toExecute, CtToken ct = default(CtToken))
             where TUoW : IUnitOfWork
         {
-            if (uow == null) throw new ArgumentNullException(nameof(uow));
-            if (toExecute == null) throw new ArgumentNullException(nameof(toExecute));
-
-            await uow.BeginAsync(ct);
-
-            await toExecute();
-
-            await uow.CommitAsync(ct);
+            await uow.ExecuteAndCommitAsync(async (u, c) =>
+            {
+                await toExecute();
+            }, ct);
         }
 #endif
 
