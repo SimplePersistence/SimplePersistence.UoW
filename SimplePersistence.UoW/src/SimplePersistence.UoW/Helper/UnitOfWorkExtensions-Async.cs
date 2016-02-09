@@ -3,9 +3,9 @@
 #if !(NET20 || NET35)
 
     using System;
+    using System.Threading;
     using System.Threading.Tasks;
     using Exceptions;
-    using CtToken = System.Threading.CancellationToken;
 
     public static partial class UnitOfWorkExtensions
     {
@@ -26,7 +26,7 @@
         /// <exception cref="ConcurrencyException"/>
 #if NET40 || PORTABLE40
         public static Task<T> ExecuteAndCommitAsync<TUoW, T>(
-            this TUoW uow, Func<TUoW, CtToken, Task<T>> toExecute, CtToken ct = default(CtToken))
+            this TUoW uow, Func<TUoW, CancellationToken, Task<T>> toExecute, CancellationToken ct = default(CancellationToken))
             where TUoW : IUnitOfWork
         {
             if (uow == null) throw new ArgumentNullException(nameof(uow));
@@ -81,7 +81,7 @@
         }
 #else
         public static async Task<T> ExecuteAndCommitAsync<TUoW, T>(
-            this TUoW uow, Func<TUoW, CtToken, Task<T>> toExecute, CtToken ct = default(CtToken))
+            this TUoW uow, Func<TUoW, CancellationToken, Task<T>> toExecute, CancellationToken ct = default(CancellationToken))
             where TUoW : IUnitOfWork
         {
             if (uow == null) throw new ArgumentNullException(nameof(uow));
@@ -112,14 +112,14 @@
         /// <exception cref="ConcurrencyException"/>
 #if NET40 || PORTABLE40
         public static Task<T> ExecuteAndCommitAsync<TUoW, T>(
-            this TUoW uow, Func<Task<T>> toExecute, CtToken ct = default(CtToken))
+            this TUoW uow, Func<Task<T>> toExecute, CancellationToken ct = default(CancellationToken))
             where TUoW : IUnitOfWork
         {
             return uow.ExecuteAndCommitAsync((u, c) => toExecute(), ct);
         }
 #else
         public static async Task<T> ExecuteAndCommitAsync<TUoW, T>(
-            this TUoW uow, Func<Task<T>> toExecute, CtToken ct = default(CtToken))
+            this TUoW uow, Func<Task<T>> toExecute, CancellationToken ct = default(CancellationToken))
             where TUoW : IUnitOfWork
         {
             return await uow.ExecuteAndCommitAsync(async (u, c) => await toExecute(), ct);
@@ -144,7 +144,7 @@
         /// <exception cref="ConcurrencyException"/>
 #if NET40 || PORTABLE40
         public static Task ExecuteAndCommitAsync<TUoW>(
-            this TUoW uow, Func<TUoW, CtToken, Task> toExecute, CtToken ct = default(CtToken))
+            this TUoW uow, Func<TUoW, CancellationToken, Task> toExecute, CancellationToken ct = default(CancellationToken))
             where TUoW : IUnitOfWork
         {
             if (uow == null) throw new ArgumentNullException(nameof(uow));
@@ -199,7 +199,7 @@
         }
 #else
         public static async Task ExecuteAndCommitAsync<TUoW>(
-            this TUoW uow, Func<TUoW, CtToken, Task> toExecute, CtToken ct = default(CtToken))
+            this TUoW uow, Func<TUoW, CancellationToken, Task> toExecute, CancellationToken ct = default(CancellationToken))
             where TUoW : IUnitOfWork
         {
             if (uow == null) throw new ArgumentNullException(nameof(uow));
@@ -227,14 +227,14 @@
         /// <exception cref="ConcurrencyException"/>
 #if NET40 || PORTABLE40
         public static Task ExecuteAndCommitAsync<TUoW>(
-            this TUoW uow, Func<Task> toExecute, CtToken ct = default(CtToken))
+            this TUoW uow, Func<Task> toExecute, CancellationToken ct = default(CancellationToken))
             where TUoW : IUnitOfWork
         {
             return uow.ExecuteAndCommitAsync((u, c) => toExecute(), ct);
         }
 #else
         public static async Task ExecuteAndCommitAsync<TUoW>(
-            this TUoW uow, Func<Task> toExecute, CtToken ct = default(CtToken))
+            this TUoW uow, Func<Task> toExecute, CancellationToken ct = default(CancellationToken))
             where TUoW : IUnitOfWork
         {
             await uow.ExecuteAndCommitAsync(async (u, c) =>
