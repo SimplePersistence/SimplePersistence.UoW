@@ -6,6 +6,7 @@
   "tags": [ "unit of work", "uow", "persistence", "pattern" ],
   "projectUrl": "https://github.com/SimplePersistence/SimplePersistence.UoW",
   "licenseUrl": "https://github.com/SimplePersistence/SimplePersistence.UoW/blob/master/LICENSE",
+  "iconUrl": "https://avatars3.githubusercontent.com/u/17026510",
   "language": "en-US",
   "copyright": "Copyright © 2016 SimplePersistence",
   "releaseNotes": "Added suport for .NET 2.0+",
