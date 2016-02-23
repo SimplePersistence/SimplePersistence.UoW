@@ -1,7 +1,29 @@
-﻿namespace SimplePersistence.UoW
+﻿#region License
+// The MIT License (MIT)
+// 
+// Copyright (c) 2016 SimplePersistence
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+#endregion
+namespace SimplePersistence.UoW
 {
-#if !NET20
-
+#if !(NET20 || NET35)
     using System.Linq;
 
     /// <summary>
@@ -10,15 +32,9 @@
     /// </summary>
     /// <typeparam name="TEntity">The entity type</typeparam>
     /// <typeparam name="TId">The entity id type</typeparam>
-#if !NET35
     public interface IQueryableSyncRepository<TEntity, in TId> 
         : ISyncRepository<TEntity, TId>, IExposeQueryable<TEntity, TId>
         where TEntity : class
-#else
-    public interface IQueryableRepository<TEntity, in TId>
-        : IRepository<TEntity, TId>, IExposeQueryable<TEntity, TId>
-        where TEntity : class
-#endif
     {
 
     }
@@ -30,15 +46,9 @@
     /// <typeparam name="TEntity">The entity type</typeparam>
     /// <typeparam name="TId01">The entity id first type</typeparam>
     /// <typeparam name="TId02">The entity id second type</typeparam>
-#if !NET35
     public interface IQueryableSyncRepository<TEntity, in TId01, in TId02> 
         : ISyncRepository<TEntity, TId01, TId02>, IExposeQueryable<TEntity, TId01, TId02>
         where TEntity : class
-#else
-    public interface IQueryableRepository<TEntity, in TId01, in TId02>
-        : IRepository<TEntity, TId01, TId02>, IExposeQueryable<TEntity, TId01, TId02>
-        where TEntity : class
-#endif
     {
 
     }
@@ -51,15 +61,9 @@
     /// <typeparam name="TId01">The entity id first type</typeparam>
     /// <typeparam name="TId02">The entity id second type</typeparam>
     /// <typeparam name="TId03">The entity id third type</typeparam>
-#if !NET35
     public interface IQueryableSyncRepository<TEntity, in TId01, in TId02, in TId03> 
         : ISyncRepository<TEntity, TId01, TId02, TId03>, IExposeQueryable<TEntity, TId01, TId02, TId03>
         where TEntity : class
-#else
-    public interface IQueryableRepository<TEntity, in TId01, in TId02, in TId03>
-        : IRepository<TEntity, TId01, TId02, TId03>, IExposeQueryable<TEntity, TId01, TId02, TId03>
-        where TEntity : class
-#endif
     {
 
     }
@@ -73,15 +77,9 @@
     /// <typeparam name="TId02">The entity id second type</typeparam>
     /// <typeparam name="TId03">The entity id third type</typeparam>
     /// <typeparam name="TId04">The entity id fourth type</typeparam>
-#if !NET35
     public interface IQueryableSyncRepository<TEntity, in TId01, in TId02, in TId03, in TId04> 
         : ISyncRepository<TEntity, TId01, TId02, TId03, TId04>, IExposeQueryable<TEntity, TId01, TId02, TId03, TId04>
         where TEntity : class
-#else
-    public interface IQueryableRepository<TEntity, in TId01, in TId02, in TId03, in TId04>
-        : IRepository<TEntity, TId01, TId02, TId03, TId04>, IExposeQueryable<TEntity, TId01, TId02, TId03, TId04>
-        where TEntity : class
-#endif
     {
 
     }
@@ -91,15 +89,9 @@
     /// to manipulate persisted entities and can be used as an <see cref="IQueryable{T}"/> source
     /// </summary>
     /// <typeparam name="TEntity">The entity type</typeparam>
-#if !NET35
     public interface IQueryableSyncRepository<TEntity> 
         : ISyncRepository<TEntity>, IExposeQueryable<TEntity>
         where TEntity : class
-#else
-    public interface IQueryableRepository<TEntity>
-        : IRepository<TEntity>, IExposeQueryable<TEntity>
-        where TEntity : class
-#endif
     {
 
     }
