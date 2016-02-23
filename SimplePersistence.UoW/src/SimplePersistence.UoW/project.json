@@ -22,16 +22,10 @@
         "System.Core": ""
       }
     },
-    ".NETPortable,Version=v4.5,Profile=Profile259": {
-      "compilationOptions": {
-        "define": [ "PORTABLE" ]
-      },
-      "frameworkAssemblies": {
-        "Microsoft.CSharp": "",
-        "System": "",
-        "System.Runtime": "",
-        "System.Threading": "",
-        "System.Threading.Tasks": ""
+    "dnxcore5": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.0",
+        "System.Runtime": "4.0.0"
       }
     },
     "dotnet": {
@@ -39,33 +33,14 @@
         "Microsoft.CSharp": "4.0.0"
       }
     },
-    "net20": {
-      "frameworkAssemblies": {
-        "mscorlib": "",
-        "System": ""
-      }
-    },
-    "net35": {
-      "frameworkAssemblies": {
-        "mscorlib": "",
-        "System": "",
-        "System.Core": ""
-      }
-    },
-    "net40": {
-      "frameworkAssemblies": {
-        "Microsoft.CSharp": "",
-        "mscorlib": "",
-        "System": "",
-        "System.Core": ""
-      }
-    },
-    "net45": {
-      "frameworkAssemblies": {
-        "Microsoft.CSharp": "",
-        "mscorlib": "",
-        "System": "",
-        "System.Core": ""
+    "net20": { },
+    "net35": { },
+    "net40": { },
+    "net45": { },
+    "netcore45": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.0",
+        "System.Runtime": "4.0.0"
       }
     }
   }
