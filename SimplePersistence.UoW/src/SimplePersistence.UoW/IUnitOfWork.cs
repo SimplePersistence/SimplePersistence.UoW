@@ -24,6 +24,7 @@
 namespace SimplePersistence.UoW
 {
 #if !(NET20 || NET35)
+    using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
 #endif
@@ -71,6 +72,14 @@ namespace SimplePersistence.UoW
         /// Thrown when the work can't be committed due to concurrency conflicts
         /// </exception>
         Task CommitAsync(CancellationToken ct = default(CancellationToken));
+
+        /// <summary>
+        /// Prepares a given <see cref="IQueryable{T}"/> for asynchronous work.
+        /// </summary>
+        /// <typeparam name="T">The query item type</typeparam>
+        /// <param name="queryable">The query to wrap</param>
+        /// <returns>An <see cref="IAsyncQueryable{T}"/> instance, wrapping the given query</returns>
+        IAsyncQueryable<T> PrepareAsyncQueryable<T>(IQueryable<T> queryable);
 
 #endif
 
