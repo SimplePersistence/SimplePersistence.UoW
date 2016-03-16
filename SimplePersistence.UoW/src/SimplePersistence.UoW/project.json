@@ -1,5 +1,5 @@
 ﻿{
-  "version": "3.0.0",
+  "version": "3.0.1",
   "title": "SimplePersistence.UoW",
   "description": "SimplePersistence.UoW is a framework to help implement the Unit of Work pattern, by exposing interfaces for repositories that can be aggregated in work areas.",
   "authors": [ "João Simões" ],
@@ -9,7 +9,7 @@
   "iconUrl": "https://avatars3.githubusercontent.com/u/17026510",
   "language": "en-US",
   "copyright": "Copyright © 2016 SimplePersistence",
-  "releaseNotes": "Added suport for .NET 2.0+ frameworks\nRepositories now have specific interfaces for exposing IQueryable<T>\nRemoved IEquatable<T> dependencies for keys",
+  "releaseNotes": "Removed dependencies on Microsoft.CSharp",
 
   "frameworks": {
     ".NETPortable,Version=v4.0,Profile=Profile328": {
