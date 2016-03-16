@@ -24,12 +24,22 @@
     },
     "dnxcore5": {
       "dependencies": {
-        "Microsoft.CSharp": "4.0.0"
+        "System.Linq": "4.0.0",
+        "System.Linq.Expressions": "4.0.0",
+        "System.Runtime": "4.0.0",
+        "System.Runtime.InteropServices": "4.0.0",
+        "System.Threading": "4.0.0",
+        "System.Threading.Tasks": "4.0.0"
       }
     },
     "dotnet": {
       "dependencies": {
-        "Microsoft.CSharp": "4.0.0"
+        "System.Linq": "4.0.0",
+        "System.Linq.Expressions": "4.0.0",
+        "System.Runtime": "4.0.0",
+        "System.Runtime.InteropServices": "4.0.0",
+        "System.Threading": "4.0.0",
+        "System.Threading.Tasks": "4.0.0"
       }
     },
     "net20": { },
@@ -38,7 +48,12 @@
     "net45": { },
     "netcore45": {
       "dependencies": {
-        "Microsoft.CSharp": "4.0.0"
+        "System.Linq": "4.0.0",
+        "System.Linq.Expressions": "4.0.0",
+        "System.Runtime": "4.0.0",
+        "System.Runtime.InteropServices": "4.0.0",
+        "System.Threading": "4.0.0",
+        "System.Threading.Tasks": "4.0.0"
       }
     }
   }
