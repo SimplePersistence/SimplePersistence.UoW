@@ -148,6 +148,32 @@ namespace SimplePersistence.UoW.Helper
         }
 #endif
 
+        /// <summary>
+        /// Asynchronously executes the given function inside an <see cref="IUnitOfWork.BeginAsync"/> 
+        /// and <see cref="IUnitOfWork.CommitAsync"/> scope
+        /// </summary>
+        /// <typeparam name="T">The result type</typeparam>
+        /// <param name="uow">The <see cref="IUnitOfWork"/> to be used</param>
+        /// <param name="toExecute">The function to be executed inside the scope</param>
+        /// <param name="ct">The cancellation token</param>
+        /// <returns>A task to be awaited</returns>
+        /// <exception cref="ArgumentNullException"/>
+        /// <exception cref="CommitException"/>
+        /// <exception cref="ConcurrencyException"/>
+#if NET40 || PORTABLE40
+        public static Task<T> ExecuteAndCommitAsync<T>(
+            this IUnitOfWork uow, Func<Task<T>> toExecute, CancellationToken ct = default(CancellationToken))
+        {
+            return uow.ExecuteAndCommitAsync<IUnitOfWork, T>(toExecute, ct);
+        }
+#else
+        public static async Task<T> ExecuteAndCommitAsync<T>(
+            this IUnitOfWork uow, Func<Task<T>> toExecute, CancellationToken ct = default(CancellationToken))
+        {
+            return await uow.ExecuteAndCommitAsync<IUnitOfWork, T>(toExecute, ct);
+        }
+#endif
+
         #endregion
 
         #region Task

@@ -9,7 +9,7 @@
   "iconUrl": "https://avatars3.githubusercontent.com/u/17026510",
   "language": "en-US",
   "copyright": "Copyright © 2016 SimplePersistence",
-  "releaseNotes": "Removed dependencies on Microsoft.CSharp",
+  "releaseNotes": "Added new extension methods for IUnitOfWork",
 
   "frameworks": {
     ".NETPortable,Version=v4.0,Profile=Profile328": {
