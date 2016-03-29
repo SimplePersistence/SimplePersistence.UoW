@@ -92,6 +92,26 @@ namespace SimplePersistence.UoW.Helper
             return result;
         }
 
+        /// <summary>
+        /// Executes the given function inside a <see cref="IUnitOfWork.Begin"/>
+        /// and <see cref="IUnitOfWork.Commit"/> scope
+        /// </summary>
+        /// <typeparam name="T">The result type</typeparam>
+        /// <param name="uow">The <see cref="IUnitOfWork"/> to be used</param>
+        /// <param name="toExecute">The function to be executed inside the scope</param>
+        /// <returns>The function result</returns>
+        /// <exception cref="ArgumentNullException"/>
+        /// <exception cref="CommitException"/>
+        /// <exception cref="ConcurrencyException"/>
+#if NET20
+        public static T ExecuteAndCommit<T>(IUnitOfWork uow, Func<T> toExecute)
+#else
+        public static T ExecuteAndCommit<T>(this IUnitOfWork uow, Func<T> toExecute)
+#endif
+        {
+            return ExecuteAndCommit<IUnitOfWork, T>(uow, toExecute);
+        }
+
         #endregion
 
         #region Void
