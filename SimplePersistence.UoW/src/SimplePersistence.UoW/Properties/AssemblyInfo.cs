@@ -24,7 +24,10 @@
 
 using System;
 using System.Reflection;
+
+#if NET40 || NET45
 using System.Runtime.InteropServices;
+#endif
 
 [assembly: AssemblyTitle("SimplePersistence.UoW")]
 [assembly: AssemblyDescription("SimplePersistence.UoW is a framework to help implement the Unit of Work pattern, by exposing interfaces for repositories that can be aggregated in work areas.")]
@@ -35,7 +38,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-#if !(PORTABLE40 || PORTABLE)
+#if NET40 || NET45
 
 [assembly: ComVisible(false)]
 

@@ -10,7 +10,7 @@
   "iconUrl": "https://avatars3.githubusercontent.com/u/17026510",
   "language": "en-US",
   "copyright": "Copyright © 2016 SimplePersistence",
-  "releaseNotes": "Added new extension methods overloads for IUnitOfWorkFactory\nAdded ILogicalArea to aggregate database logic",
+  "releaseNotes": "Added new extension methods overloads for IUnitOfWorkFactory\nAdded ILogicalArea to aggregate database logic\nRemoved System.Runtime.InteropServices dependencies",
 
   "frameworks": {
     ".NETPortable,Version=v4.0,Profile=Profile328": {
@@ -28,7 +28,6 @@
         "System.Linq": "4.0.0",
         "System.Linq.Expressions": "4.0.0",
         "System.Runtime": "4.0.0",
-        "System.Runtime.InteropServices": "4.0.0",
         "System.Threading": "4.0.0",
         "System.Threading.Tasks": "4.0.0"
       }
@@ -38,7 +37,6 @@
         "System.Linq": "4.0.0",
         "System.Linq.Expressions": "4.0.0",
         "System.Runtime": "4.0.0",
-        "System.Runtime.InteropServices": "4.0.0",
         "System.Threading": "4.0.0",
         "System.Threading.Tasks": "4.0.0"
       }
@@ -52,7 +50,6 @@
         "System.Linq": "4.0.0",
         "System.Linq.Expressions": "4.0.0",
         "System.Runtime": "4.0.0",
-        "System.Runtime.InteropServices": "4.0.0",
         "System.Threading": "4.0.0",
         "System.Threading.Tasks": "4.0.0"
       }
