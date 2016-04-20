@@ -21,32 +21,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 #endregion
+namespace SimplePersistence.UoW
+{
+    /// <summary>
+    /// Represents an area used to aggregate Unit of Work logic, like
+    /// data transformations or procedures.
+    /// </summary>
+    public interface ILogicalArea
+    {
 
-using System;
-using System.Reflection;
-
-#if NET40 || NET45
-using System.Runtime.InteropServices;
-#endif
-
-[assembly: AssemblyTitle("SimplePersistence.UoW")]
-[assembly: AssemblyDescription("SimplePersistence.UoW is a framework to help implement the Unit of Work pattern, by exposing interfaces for repositories that can be aggregated in work areas.")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Net.JoaoSimoes")]
-[assembly: AssemblyProduct("SimplePersistence")]
-[assembly: AssemblyCopyright("Copyright © 2016 SimplePersistence")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-
-#if NET40 || NET45
-
-[assembly: ComVisible(false)]
-
-[assembly: Guid("6c633c6b-b379-48c7-92bd-1e006a0ab01e")]
-
-#endif
-
-[assembly: CLSCompliant(true)]
-
-[assembly: AssemblyVersion("3.2.0")]
-[assembly: AssemblyInformationalVersion("3.2.0")]
+    }
+}
