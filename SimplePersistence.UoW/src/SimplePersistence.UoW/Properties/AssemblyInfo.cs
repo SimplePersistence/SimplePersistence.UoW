@@ -25,7 +25,7 @@
 using System;
 using System.Reflection;
 
-#if NET40 || NET45
+#if NET20 || NET35 || NET40 || NET45
 using System.Runtime.InteropServices;
 #endif
 
@@ -38,7 +38,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-#if NET40 || NET45
+#if NET20 || NET35 || NET40 || NET45
 
 [assembly: ComVisible(false)]
 

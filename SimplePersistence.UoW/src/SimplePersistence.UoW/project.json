@@ -10,7 +10,7 @@
   "iconUrl": "https://avatars3.githubusercontent.com/u/17026510",
   "language": "en-US",
   "copyright": "Copyright © 2016 SimplePersistence",
-  "releaseNotes": "Library is now strong signed",
+  "releaseNotes": "Enabled interoperability for .NET 2.0 and 3.5",
   "compilationOptions": {
     "keyFile": "SimplePersistence.snk"
   },
