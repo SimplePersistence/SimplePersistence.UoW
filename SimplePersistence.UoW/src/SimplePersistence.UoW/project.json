@@ -1,5 +1,5 @@
 ﻿{
-  "version": "3.2.0",
+  "version": "3.2.1",
   "title": "SimplePersistence.UoW",
   "summary": "Framework to help implement the Unit of Work pattern.",
   "description": "SimplePersistence.UoW is a framework to help implement the Unit of Work pattern, by exposing interfaces for repositories that can be aggregated in work areas.",
