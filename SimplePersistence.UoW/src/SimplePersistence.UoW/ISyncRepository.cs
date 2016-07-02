@@ -32,10 +32,10 @@ namespace SimplePersistence.UoW
     /// <typeparam name="TEntity">The entity type</typeparam>
     /// <typeparam name="TId">The entity id type</typeparam>
 #if !(NET20 || NET35)
-    public interface ISyncRepository<TEntity, in TId>
+    public interface ISyncRepository<TEntity, in TId> : ISimplePersistenceRepository
         where TEntity : class
 #else
-    public interface IRepository<TEntity, in TId>
+    public interface IRepository<TEntity, in TId> : ISimplePersistenceRepository
         where TEntity : class
 #endif
     {
@@ -155,10 +155,10 @@ namespace SimplePersistence.UoW
     /// <typeparam name="TId01">The entity id first type</typeparam>
     /// <typeparam name="TId02">The entity id second type</typeparam>
 #if !(NET20 || NET35)
-    public interface ISyncRepository<TEntity, in TId01, in TId02>
+    public interface ISyncRepository<TEntity, in TId01, in TId02> : ISimplePersistenceRepository
         where TEntity : class
 #else
-    public interface IRepository<TEntity, in TId01, in TId02>
+    public interface IRepository<TEntity, in TId01, in TId02> : ISimplePersistenceRepository
         where TEntity : class
 #endif
     {
@@ -281,10 +281,10 @@ namespace SimplePersistence.UoW
     /// <typeparam name="TId02">The entity id second type</typeparam>
     /// <typeparam name="TId03">The entity id third type</typeparam>
 #if !(NET20 || NET35)
-    public interface ISyncRepository<TEntity, in TId01, in TId02, in TId03>
+    public interface ISyncRepository<TEntity, in TId01, in TId02, in TId03> : ISimplePersistenceRepository
         where TEntity : class
 #else
-    public interface IRepository<TEntity, in TId01, in TId02, in TId03>
+    public interface IRepository<TEntity, in TId01, in TId02, in TId03> : ISimplePersistenceRepository
         where TEntity : class
 #endif
     {
@@ -410,10 +410,10 @@ namespace SimplePersistence.UoW
     /// <typeparam name="TId03">The entity id third type</typeparam>
     /// <typeparam name="TId04">The entity id fourth type</typeparam>
 #if !(NET20 || NET35)
-    public interface ISyncRepository<TEntity, in TId01, in TId02, in TId03, in TId04>
+    public interface ISyncRepository<TEntity, in TId01, in TId02, in TId03, in TId04> : ISimplePersistenceRepository
         where TEntity : class
 #else
-    public interface IRepository<TEntity, in TId01, in TId02, in TId03, in TId04>
+    public interface IRepository<TEntity, in TId01, in TId02, in TId03, in TId04> : ISimplePersistenceRepository
         where TEntity : class
 #endif
     {
@@ -537,10 +537,10 @@ namespace SimplePersistence.UoW
     /// </summary>
     /// <typeparam name="TEntity">The entity type</typeparam>
 #if !(NET20 || NET35)
-    public interface ISyncRepository<TEntity>
+    public interface ISyncRepository<TEntity> : ISimplePersistenceRepository
         where TEntity : class
 #else
-    public interface IRepository<TEntity>
+    public interface IRepository<TEntity> : ISimplePersistenceRepository
         where TEntity : class
 #endif
     {
