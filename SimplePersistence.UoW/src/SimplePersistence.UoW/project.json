@@ -10,7 +10,7 @@
   "iconUrl": "https://avatars3.githubusercontent.com/u/17026510",
   "language": "en-US",
   "copyright": "Copyright © 2016 SimplePersistence",
-  "releaseNotes": "Enabled interoperability for .NET 2.0 and 3.5",
+  "releaseNotes": "All repositories now extend from a common interface named ISimplePersistenceRepository",
   "compilationOptions": {
     "keyFile": "SimplePersistence.snk"
   },
@@ -44,10 +44,10 @@
         "System.Threading.Tasks": "4.0.0"
       }
     },
-    "net20": { },
-    "net35": { },
-    "net40": { },
-    "net45": { },
+    "net20": {},
+    "net35": {},
+    "net40": {},
+    "net45": {},
     "netcore45": {
       "dependencies": {
         "System.Linq": "4.0.0",

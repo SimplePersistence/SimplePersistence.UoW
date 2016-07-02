@@ -34,7 +34,7 @@ namespace SimplePersistence.UoW
     /// </summary>
     /// <typeparam name="TEntity">The entity type</typeparam>
     /// <typeparam name="TId">The entity id type</typeparam>
-    public interface IAsyncRepository<TEntity, in TId>
+    public interface IAsyncRepository<TEntity, in TId> : ISimplePersistenceRepository
         where TEntity : class
     {
         #region GetById
@@ -195,7 +195,7 @@ namespace SimplePersistence.UoW
     /// <typeparam name="TEntity">The entity type</typeparam>
     /// <typeparam name="TId01">The entity id first type</typeparam>
     /// <typeparam name="TId02">The entity id second type</typeparam>
-    public interface IAsyncRepository<TEntity, in TId01, in TId02>
+    public interface IAsyncRepository<TEntity, in TId01, in TId02> : ISimplePersistenceRepository
         where TEntity : class
     {
         #region GetById
@@ -352,7 +352,7 @@ namespace SimplePersistence.UoW
     /// <typeparam name="TId01">The entity id first type</typeparam>
     /// <typeparam name="TId02">The entity id second type</typeparam>
     /// <typeparam name="TId03">The entity id third type</typeparam>
-    public interface IAsyncRepository<TEntity, in TId01, in TId02, in TId03>
+    public interface IAsyncRepository<TEntity, in TId01, in TId02, in TId03> : ISimplePersistenceRepository
         where TEntity : class
     {
         #region GetById
@@ -512,7 +512,7 @@ namespace SimplePersistence.UoW
     /// <typeparam name="TId02">The entity id second type</typeparam>
     /// <typeparam name="TId03">The entity id third type</typeparam>
     /// <typeparam name="TId04">The entity id fourth type</typeparam>
-    public interface IAsyncRepository<TEntity, in TId01, in TId02, in TId03, in TId04>
+    public interface IAsyncRepository<TEntity, in TId01, in TId02, in TId03, in TId04> : ISimplePersistenceRepository
         where TEntity : class
     {
         #region GetById
@@ -672,7 +672,7 @@ namespace SimplePersistence.UoW
     /// to manipulate persisted entities
     /// </summary>
     /// <typeparam name="TEntity">The entity type</typeparam>
-    public interface IAsyncRepository<TEntity>
+    public interface IAsyncRepository<TEntity> : ISimplePersistenceRepository
         where TEntity : class
     {
         #region GetById
