@@ -26,6 +26,9 @@ namespace SimplePersistence.UoW.Helper
     using System;
     using Exceptions;
 
+    /// <summary>
+    /// Contains extension methods for <see cref="IUnitOfWorkFactory"/> instances.
+    /// </summary>
     public static partial class UnitOfWorkFactoryExtensions
     {
         #region GetAndRelease
