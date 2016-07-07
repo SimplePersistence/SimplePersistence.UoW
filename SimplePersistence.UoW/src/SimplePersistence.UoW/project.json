@@ -1,23 +1,30 @@
 ﻿{
   "version": "3.2.1",
   "title": "SimplePersistence.UoW",
-  "summary": "Framework to help implement the Unit of Work pattern.",
   "description": "SimplePersistence.UoW is a framework to help implement the Unit of Work pattern, by exposing interfaces for repositories that can be aggregated in work areas.",
   "authors": [ "João Simões" ],
-  "tags": [ "unit of work", "uow", "persistence", "pattern" ],
-  "projectUrl": "https://github.com/SimplePersistence/SimplePersistence.UoW",
-  "licenseUrl": "https://github.com/SimplePersistence/SimplePersistence.UoW/blob/master/LICENSE",
-  "iconUrl": "https://avatars3.githubusercontent.com/u/17026510",
-  "language": "en-US",
   "copyright": "Copyright © 2016 SimplePersistence",
-  "releaseNotes": "All repositories now extend from a common interface named ISimplePersistenceRepository",
-  "compilationOptions": {
+  "packOptions": {
+    "summary": "Framework to help implement the Unit of Work pattern.",
+    "tags": [ "unit of work", "uow", "persistence", "pattern" ],
+    "projectUrl": "https://github.com/SimplePersistence/SimplePersistence.UoW",
+    "licenseUrl": "https://github.com/SimplePersistence/SimplePersistence.UoW/blob/master/LICENSE",
+    "iconUrl": "https://avatars3.githubusercontent.com/u/17026510",
+    "releaseNotes": "All repositories now extend from a common interface named ISimplePersistenceRepository\nAdded support for .NET Standard",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/SimplePersistence/SimplePersistence.UoW"
+    }
+  },
+  "buildOptions": {
+    "xmlDoc": true,
+    "optimize": true,
     "keyFile": "SimplePersistence.snk"
   },
 
   "frameworks": {
     ".NETPortable,Version=v4.0,Profile=Profile328": {
-      "compilationOptions": {
+      "buildOptions": {
         "define": [ "PORTABLE40" ]
       },
       "frameworkAssemblies": {
@@ -26,35 +33,13 @@
         "System.Core": ""
       }
     },
-    "dnxcore5": {
-      "dependencies": {
-        "System.Linq": "4.0.0",
-        "System.Linq.Expressions": "4.0.0",
-        "System.Runtime": "4.0.0",
-        "System.Threading": "4.0.0",
-        "System.Threading.Tasks": "4.0.0"
-      }
-    },
-    "dotnet": {
-      "dependencies": {
-        "System.Linq": "4.0.0",
-        "System.Linq.Expressions": "4.0.0",
-        "System.Runtime": "4.0.0",
-        "System.Threading": "4.0.0",
-        "System.Threading.Tasks": "4.0.0"
-      }
-    },
     "net20": {},
     "net35": {},
     "net40": {},
     "net45": {},
-    "netcore45": {
+    "netstandard1.0": {
       "dependencies": {
-        "System.Linq": "4.0.0",
-        "System.Linq.Expressions": "4.0.0",
-        "System.Runtime": "4.0.0",
-        "System.Threading": "4.0.0",
-        "System.Threading.Tasks": "4.0.0"
+        "NETStandard.Library": "1.6.0"
       }
     }
   }
