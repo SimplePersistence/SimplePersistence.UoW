@@ -24,10 +24,32 @@
 namespace SimplePersistence.UoW.Helper
 {
 #if NET20
-        public delegate void Action();
-        public delegate void Action<in T>(T t);
+    /// <summary>
+    /// Encapsulates a method that has no parameters and does not return a value.
+    /// </summary>
+    public delegate void Action();
 
-        public delegate TResult Func<out TResult>();
-        public delegate TResult Func<in T, out TResult>(T t);
+    /// <summary>
+    /// Encapsulates a method that has one parameter and does not return a value.
+    /// </summary>
+    /// <typeparam name="T">The parameter type</typeparam>
+    /// <param name="t">The parameter value</param>
+    public delegate void Action<in T>(T t);
+
+    /// <summary>
+    /// Encapsulates a method that has no parameters and returns a value.
+    /// </summary>
+    /// <typeparam name="TResult">The result type</typeparam>
+    /// <returns>The result value</returns>
+    public delegate TResult Func<out TResult>();
+
+    /// <summary>
+    /// Encapsulates a method that has a single parameter and returns a value.
+    /// </summary>
+    /// <typeparam name="T">The parameter type</typeparam>
+    /// <typeparam name="TResult">The result type</typeparam>
+    /// <param name="t">The parameter value</param>
+    /// <returns>The result value</returns>
+    public delegate TResult Func<in T, out TResult>(T t);
 #endif
 }
